@@ -16,10 +16,14 @@
 	
 	<h2 id="texto-copiado"></h2>
 
-	<script src="js/jquery.js"></script>
+	<script src="js/jquery-3.1.1.js"></script>
 	<script>
-       $('#texto-copiado').text('Alura');
-    </script>
-	
+		$("#botao-copiar").click(function() {
+			var input = $('#campo-nome');
+            var nome = input.val();
+            input.val('');
+			$("#texto-copiado").text(nome);	
+		});
+	</script>
 </body>
 </html>
