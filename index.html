@@ -21,54 +21,79 @@
 					<td>Tablet miPad 18</td>
 					<td>1</td>
 					<td>499.99</td>
-					<td>499.99</td>
+					<td class="item-total">499.99</td>
 				</tr>
 				<tr>
 					<td><img src="imagens/telefone.png"></td>
 					<td>Telefone miPhone 18</td>
 					<td>2</td>
 					<td>199.99</td>
-					<td>399.98</td>
+					<td class="item-total">399.98</td>
 				</tr>
 				<tr>
 					<td><img src="imagens/sapato.jpg"></td>
 					<td>Sapato</td>
 					<td>1</td>
 					<td>99.99</td>
-					<td>99.99</td>
+					<td class="item-total">99.99</td>
 				</tr>
 				<tr>
 					<td><img src="imagens/monitor.jpg"></td>
 					<td>Monitor Sam 21</td>
 					<td>1</td>
 					<td>299.00</td>
-					<td>299.00</td>
+					<td class="item-total">299.00</td>
 				</tr>
 				<tr>
 					<td><img src="imagens/teclado.jpg"></td>
 					<td>Teclado com fio preto </td>
 					<td>1</td>
 					<td>100.00</td>
-					<td>100.00</td>
+					<td class="item-total">100.00</td>
 				</tr>
 				<tr>
 					<td><img src="imagens/mouse.jpg"></td>
 					<td>Mouse wireless</td>
 					<td>1</td>
 					<td>199.00</td>
-					<td>199.00</td>
+					<td class="item-total">199.00</td>
 				</tr>
 				<tr>
 					<td><img src="imagens/camiseta.jpg"></td>
 					<td>Camiseta G</td>
 					<td>1</td>
 					<td>25.00</td>
-					<td>25.00</td>
+					<td class="item-total">25.00</td>
 				</tr>
 			</tbody>
 		</table>
 	
 	</div>
 
+	<script src="js/jquery-3.1.1.js"></script>
+
+	<script>
+		var aposCarregamento = function() {
+
+			var itens = $(".item-total");
+			var total = 0;
+			for(var i = 0; i < itens.length; i++) {
+				var item = $(itens[i]);
+				var valor = parseFloat(item.text());
+				total = total + valor;
+			}
+			console.log(total);
+			$("#valor-total").text(total);
+			$("#quantidade-de-itens").text(itens.length);
+		}
+
+		$(aposCarregamento); // será chamado após a página estiver carregada
+	</script>
+
+	<div>
+		Valor total: R$ <span id="valor-total">0</span>
+		<br/>
+		Quantidade de itens: <span id="quantidade-de-itens">0</span>
+	</div>
 </body>
 </html>
