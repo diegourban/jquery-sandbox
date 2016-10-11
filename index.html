@@ -22,6 +22,7 @@
 					<td>1</td>
 					<td>499.99</td>
 					<td class="item-total">499.99</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/telefone.png"></td>
@@ -29,6 +30,7 @@
 					<td>2</td>
 					<td>199.99</td>
 					<td class="item-total">399.98</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/sapato.jpg"></td>
@@ -36,6 +38,7 @@
 					<td>1</td>
 					<td>99.99</td>
 					<td class="item-total">99.99</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/monitor.jpg"></td>
@@ -43,6 +46,7 @@
 					<td>1</td>
 					<td>299.00</td>
 					<td class="item-total">299.00</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/teclado.jpg"></td>
@@ -50,6 +54,7 @@
 					<td>1</td>
 					<td>100.00</td>
 					<td class="item-total">100.00</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/mouse.jpg"></td>
@@ -57,6 +62,7 @@
 					<td>1</td>
 					<td>199.00</td>
 					<td class="item-total">199.00</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/camiseta.jpg"></td>
@@ -64,6 +70,7 @@
 					<td>1</td>
 					<td>25.00</td>
 					<td class="item-total">25.00</td>
+					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
 			</tbody>
 		</table>
@@ -73,6 +80,18 @@
 	<script src="js/jquery-3.1.1.js"></script>
 
 	<script>
+		var removeItem = function(event) {
+			event.preventDefault();
+
+			var self = $(this);
+			//self.parent().parent().remove();
+			self.closest("tr").remove();
+
+			var atual = parseInt($("#quantidade-de-itens").text());
+			var novaQuantidade = atual - 1;
+			$("#quantidade-de-itens").text(novaQuantidade);
+		}
+
 		var aposCarregamento = function() {
 
 			var itens = $(".item-total");
@@ -85,6 +104,7 @@
 			console.log(total);
 			$("#valor-total").text(total);
 			$("#quantidade-de-itens").text(itens.length);
+			$(".remove-item").click(removeItem);
 		}
 
 		$(aposCarregamento); // será chamado após a página estiver carregada
