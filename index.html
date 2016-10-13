@@ -79,47 +79,11 @@
 
 	<script src="js/jquery-3.1.1.js"></script>
 
-	<script>
-		var atualizaDados = function() {
-			var itens = $(".item-total");
-			var total = 0;
-			for(var i = 0; i < itens.length; i++) {
-				var item = $(itens[i]);
-				var valor = parseFloat(item.text());
-				total = total + valor;
-			}
+	<script src="carrinho.js"></script>
 
-			$("#valor-total").text(total);
-			$("#quantidade-de-itens").text(itens.length);
-		}
-
-		var removeItem = function(event) {
-			event.preventDefault();
-
-			var self = $(this);
-			//self.parent().parent().remove();
-			self.closest("tr").remove();
-
-			/*
-			var atual = parseInt($("#quantidade-de-itens").text());
-			var novaQuantidade = atual - 1;
-			$("#quantidade-de-itens").text(novaQuantidade);
-
-			var precoAtual = parseFloat($("valor-total").text());
-			var preco = parseFloat(self.closest("tr").find(".item-total").text());
-			var novoPreco = precoAtual - preco;
-			$("valor-total").text(novoPreco);
-			*/
-			atualizaDados();
-		}
-
-		var aposCarregamento = function() {
-			atualizaDados();
-			$(".remove-item").click(removeItem);
-		}
-
-		$(aposCarregamento); // será chamado após a página estiver carregada
-	</script>
+	<div>
+		<input type="button" value="Undo" id="undo">
+	</div>
 
 	<div>
 		Valor total: R$ <span id="valor-total">0</span>
