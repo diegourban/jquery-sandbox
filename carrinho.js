@@ -48,6 +48,22 @@ var undo = function() {
 	atualizaDados();
 }
 
+var daDestaque = function() {
+	$(this).find(".remove-item").fadeIn();
+	$(this).addClass("hovering");
+}
+
+var tiraDestaque = function() {
+	$(this).find(".remove-item").fadeOut();
+	$(this).removeClass("hovering");
+}
+
+var alternaPropagandas = function(event) {
+	event.preventDefault();
+	$(".propaganda").toggle();
+	$(".alterna-propaganda").toggle();
+}
+
 var aposCarregamento = function() {
 	atualizaDados();
 	$(".undo").click(undo);
@@ -57,6 +73,10 @@ var aposCarregamento = function() {
 			umaPropaganda().insertAfter($(this));
 		});	
 	});	
+
+	$(".carrinho tbody tr").hover(daDestaque, tiraDestaque);
+
+	$(".alterna-propaganda").click(alternaPropagandas);
 }
 
 $(aposCarregamento); // será chamado após a página estiver carregada
