@@ -2,6 +2,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="carrinho.css">
 </head>
+
 <body>
 	<div class="carrinho">
 		<h2>Carrinho entrega em Sao Paulo</h2>
@@ -64,6 +65,33 @@
 					<td class="item-total">199.00</td>
 					<td><a class="remove-item" href="">(remover)</a></td>
 				</tr>
+			</tbody>
+		</table>
+
+		<div>
+			<input type="button" value="Undo" class="undo">
+		</div>
+
+		<div>
+			Valor total: R$ <span class="valor-total">0</span>
+			<br/>
+			Quantidade de itens: <span class="quantidade-de-itens">0</span>
+		</div>	
+	</div>
+
+	<div class="carrinho">
+		<h2>Carrinho entrega em Vitoria</h2>
+		<table>
+			<thead>
+				<tr>
+					<td></td>
+					<td>Nome</td>
+					<td>Quantidade</td>
+					<td>Valor</td>
+					<td>Total</td>
+				</tr>
+			</thead>
+			<tbody>
 				<tr>
 					<td><img src="imagens/camiseta.jpg"></td>
 					<td>Camiseta G</td>
@@ -74,21 +102,20 @@
 				</tr>
 			</tbody>
 		</table>
-	
+
+		<div>
+			<input type="button" value="Undo" class="undo">
+		</div>
+
+		<div>
+			Valor total: R$ <span class="valor-total">0</span>
+			<br/>
+			Quantidade de itens: <span class="quantidade-de-itens">0</span>
+		</div>
 	</div>
 
 	<script src="js/jquery-3.1.1.js"></script>
 
 	<script src="carrinho.js"></script>
-
-	<div>
-		<input type="button" value="Undo" id="undo">
-	</div>
-
-	<div>
-		Valor total: R$ <span id="valor-total">0</span>
-		<br/>
-		Quantidade de itens: <span id="quantidade-de-itens">0</span>
-	</div>
 </body>
 </html>
