@@ -9,7 +9,6 @@ $(document).ready(function() {
 	$('#botao-reiniciar').click(reiniciaJogo);
 });
 
-
 function inicializaMarcadores() {
 	var frase = $(".frase").text();
 	campo.on('input', function() {
@@ -21,7 +20,7 @@ function inicializaMarcadores() {
 			campo.removeClass('campo-correto');
 			campo.addClass('campo-errado');
 		}
-	});	
+	});
 }
 
 function atualizaTamanhoFrase() {
@@ -48,12 +47,17 @@ function inicializaCronometro() {
 			tempoRestante--;
 			$('#tempo-digitacao').text(tempoRestante);
 			if(tempoRestante < 1) {
-				campo.attr('disabled', true);
 				clearInterval(cronometroId);
-				 $("#botao-reiniciar").attr("disabled", false);
+				finalizaJogo();
 			}
 		}, 1000);
 	});	
+}
+
+function finalizaJogo() {
+	campo.attr('disabled', true);
+	$("#botao-reiniciar").attr("disabled", false);
+	inserePlacar();
 }
 
 function reiniciaJogo() {
