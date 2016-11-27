@@ -5,8 +5,24 @@ $(document).ready(function() {
 	atualizaTamanhoFrase();
 	inicializaContadores();
 	inicializaCronometro();
+	inicializaMarcadores();
 	$('#botao-reiniciar').click(reiniciaJogo);
 });
+
+
+function inicializaMarcadores() {
+	var frase = $(".frase").text();
+	campo.on('input', function() {
+		var digitado = campo.val();
+		if(frase.startsWith(digitado)) {
+			campo.removeClass('campo-errado');
+			campo.addClass('campo-correto');
+		} else {
+			campo.removeClass('campo-correto');
+			campo.addClass('campo-errado');
+		}
+	});	
+}
 
 function atualizaTamanhoFrase() {
 	var frase = $('.frase').text();
@@ -47,4 +63,6 @@ function reiniciaJogo() {
 	$('#contador-palavras').text('0');
 	$('#tempo-digitacao').text(tempoInicial);
 	inicializaCronometro();
+	campo.removeClass('campo-errado');
+	campo.removeClass('campo-correto');
 }

@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Typer</title>
+    <link rel="stylesheet" type="text/css" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 
 <body>
-    <h1>Typer</h1>
-    <p class="frase">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	<div class="container">
+	    <h1 class="center">Typer</h1>
+	    <p class="frase center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-    <ul class="informacoes">
-    	<li><span id="quantidade-palavras">5</span> palavras</li>
-		<li><span id="tempo-digitacao">10</span> segundos</li>
-    </ul>
+	    <ul class="informacoes center">
+	    	<li>
+	    		<i class="small material-icons icone">description</i>
+	    		<span id="quantidade-palavras">5</span> palavras
+	    	</li>
+			<li>
+				<i class="small material-icons icone">query_builder</i>
+				<span id="tempo-digitacao">3</span> segundos
+			</li>
+	    </ul>
 
-    <textarea class="campo-digitacao" rows="8" cols="40"></textarea>
-    <button id="botao-reiniciar">Reiniciar Jogo</button>
+	    <textarea class="campo-digitacao" rows="8" cols="40"></textarea>
+	    <div class="botoes">
+	    	<a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red">
+	    		<i class="material-icons">restore</i>
+	    	</a>
+	    </div>
 
-    <ul>
-    	<li><span id="contador-caracteres">0</span> caracteres</li>
-    	<li><span id="contador-palavras">0</span> palavras</li>
-    </ul>
+	    <ul class="center">
+	    	<li><span id="contador-caracteres">0</span> caracteres</li>
+	    	<li><span id="contador-palavras">0</span> palavras</li>
+	    </ul>
+    </div>
 
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/main.js"></script>
