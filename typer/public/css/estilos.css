@@ -24,3 +24,7 @@
 .campo-errado {
 	border: 3px solid red;
 }
+
+.invisivel {
+	display: none;
+}
