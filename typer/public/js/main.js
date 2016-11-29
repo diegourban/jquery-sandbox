@@ -10,8 +10,8 @@ $(document).ready(function() {
 });
 
 function inicializaMarcadores() {
-	var frase = $(".frase").text();
 	campo.on('input', function() {
+		var frase = $(".frase").text();
 		var digitado = campo.val();
 		if(frase.startsWith(digitado)) {
 			campo.removeClass('campo-errado');
@@ -29,6 +29,11 @@ function atualizaTamanhoFrase() {
 	$('#quantidade-palavras').text(numeroPalavras);	
 }
 
+function atualizaTempoInicial(tempo) {
+	tempoInicial = tempo;
+	$('#tempo-digitacao').text(tempo);
+}
+
 function inicializaContadores() {
 	campo.on('input', function() {
 		var conteudo = campo.val();
@@ -40,8 +45,8 @@ function inicializaContadores() {
 }
 
 function inicializaCronometro() {
-	var tempoRestante = $('#tempo-digitacao').text();
 	campo.one('focus', function() {
+		var tempoRestante = $('#tempo-digitacao').text();
 		$("#botao-reiniciar").attr("disabled",true);
 		var cronometroId = setInterval(function() {
 			tempoRestante--;
