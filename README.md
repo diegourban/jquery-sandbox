@@ -11,6 +11,12 @@ Open `index.html` at your browser.
 
 
 ## typer folder
+\servidor is where the web application is located.
+\servidor-cors is where the data is located.
+
+The web server will request information from the data server.
+The data server has been configured to allow Cross-Origin Resource Sharing
+
 ### Installation
 1. Install node dependencies for \servidor and \servidor-cors with `npm install`
 2. Start the application server \servidor with `npm start`
