@@ -4,7 +4,7 @@ $('#botao-sync').click(sincronizaPlacar);
 function inserePlacar() {
 	var tbody = $('.placar').find('tbody');
 
-	var usuario = 'Diego';
+	var usuario = $('#usuarios').val();
 	var qtdPalavras = $('#contador-palavras').text();
 	var linha = novaLinha(usuario, qtdPalavras);
 	linha.find('.botao-remover').click(removeLinha);
@@ -70,7 +70,16 @@ function sincronizaPlacar() {
 	};
 
 	$.post('http://localhost:3001/placar', dados, function() {
-		console.log('Salvou o placar no servidor')
+		console.log('Salvou o placar no servidor');
+		$('.tooltip').tooltipster('open').tooltipster('content', "Sincronizado com sucesso");
+	})
+	.fail(function() {
+		$('.tooltip').tooltipster('open').tooltipster('content', "Falha ao sincronizar");
+	})
+	.always(function() {
+		setTimeout(function() {
+			$('.tooltip').tooltipster('close');
+		}, 1000);
 	});
 }
 
