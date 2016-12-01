@@ -1,18 +1,16 @@
-# jquery-sandbox
+# Sandbox project to play around with jQuery
 
-## Sandbox project to play around with jQuery
-
-### basics folder
+## basics folder
 #### Usage
 Open `hello.html` or `treinamentos.html` at your browser.
 
 
-### shopping cart folder
+## shopping cart folder
 #### Usage
 Open `index.html` at your browser.
 
 
-### typer folder
+## typer folder
 #### Installation
 1. Install node dependencies for \servidor and \servidor-cors with `npm install`
 2. Start the application server \servidor with `npm start`
