@@ -6,6 +6,7 @@ $(document).ready(function() {
 	inicializaContadores();
 	inicializaCronometro();
 	inicializaMarcadores();
+	atualizaPlacar();
 	$('#botao-reiniciar').click(reiniciaJogo);
 });
 
